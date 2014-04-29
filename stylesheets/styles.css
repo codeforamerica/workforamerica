@@ -27,30 +27,43 @@ body{
 
 div.site-width{
 	width: 90%;
+	max-width: 50rem;
 	margin: 0 auto;
 }
 
 header[role="masthead"]{
-	background: black;
-	padding: 1rem 0;
+	background: white;
+	padding: 0.5rem 0;
 	color: white;
 	margin-bottom: 2rem;
 	font-size: 1.25rem;
 }
+
+/* @group header */
+
+header[role="masthead"] div.site-width{
+	position: relative;
+}
+
 
 header[role="masthead"] a{
 	color: white;
 	font-weight: 600;
 	text-decoration: none;
 	margin-right: 1em;
+	display: inline-block;
+	vertical-align: middle;
 }
 
+
 header[role="masthead"] a.civic-startups{ color: #fd796b; }
-header[role="masthead"] a.governments{ color: #fdec34; }
+header[role="masthead"] a.governments{ color: #ddab00; }
 header[role="masthead"] a.suggest-a-job{ color: #2db282; }
+header[role="masthead"] a.suggest-a-job{ color: #4edba7; }
 
 header[role="masthead"] a.civic-startups:hover{ color: #d73c3c; }
 header[role="masthead"] a.governments:hover{ color: #ddab00; }
+header[role="masthead"] a.suggest-a-job:hover{ color: #188d7b; }
 header[role="masthead"] a.suggest-a-job:hover{ color: #188d7b; }
 
 
@@ -58,6 +71,11 @@ header[role="masthead"] a:hover{
 	text-decoration: none;
 }
 
+
+
+/* @end */
+
+/* @group body.home */
 
 body.home {
 	background: #334e62;
@@ -68,20 +86,94 @@ body.home main{
 	text-align: center;	
 }
 
-.home main h1{
-	font-size: 3rem;
+
+body.home main a{
+	text-decoration: none;
+	border-bottom: 1px solid;
+	padding-bottom: 0;
+	line-height: 1;
+	display: inline-block;
+	vertical-align: text-bottom;
+	color: inherit;
 }
+
+body.home main a:hover{
+	color: white;
+}
+
+body.home main h1{
+	color: white;
+	font-size: 2.5rem;
+	margin-bottom: 0.75rem;
+}
+
+body.home main p{
+	font-size: 1.25rem;
+	line-height: 1.4em;
+	margin-bottom: 2rem;
+}
+
+
+
+/* @end */
 
 article.job-listing{
-	background: yellow;
+	background: #85fbcf;
+	-moz-border-radius: 0.33rem;
+border-radius: 0.33rem;
+	color: #2b7f5f;
+	padding: 1rem;
+	font-size: 1.125rem;
+	font-weight: 600;
+	text-align: left;
+	width: 80%;
+	margin: 0 auto;
+	white-space: nowrap;
+	overflow: hidden;
+	border: 0.2rem solid white;
+	margin-bottom: 1rem;
+	position: relative;
 }
 
-article.job-listing h1{
-	font-size: 1rem;
-}
 
 article.job-listing dl,
 article.job-listing dl dt,
 article.job-listing dl dd{
-	display: inline;
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
+
+article.job-listing dl dt{
+	display: none;
+}
+
+article.job-listing dl dd.job-listing-company{
+	width: 25%;
+}
+
+article.job-listing dl dd.job-listing-title{
+	width: 60%;
+}
+
+article.job-listing dl dd.job-listing-location{
+}
+
+article.job-listing dl dd.job-listing-type{
+	text-indent: -999rem;
+	width: 1rem;
+	height: 1rem;
+	background: #fc4431;
+	-moz-border-radius: 100%;
+	border-radius: 100%;
+	position: absolute;
+	right: 1rem;
+	top: 50%;
+	margin-top: -0.6rem;
+}
+
+article.job-listing dl dd.job-listing-type.job-listing-type-government{
+	background: #fcb830;
+}
+
