@@ -119,10 +119,9 @@ body.home main p{
 
 article.job-listing{
 	background: #85fbcf;
-	-moz-border-radius: 0.33rem;
-border-radius: 0.33rem;
+
 	color: #2b7f5f;
-	padding: 1rem;
+	padding: 0.8rem 1rem;
 	font-size: 1.125rem;
 	font-weight: 600;
 	text-align: left;
@@ -130,7 +129,7 @@ border-radius: 0.33rem;
 	margin: 0 auto;
 	white-space: nowrap;
 	overflow: hidden;
-	border: 0.2rem solid white;
+	border: 0.3rem solid #FFF;
 	margin-bottom: 1rem;
 	position: relative;
 }
@@ -141,7 +140,7 @@ article.job-listing dl dt,
 article.job-listing dl dd{
 	display: inline-block;
 	white-space: nowrap;
-	overflow: hidden;
+	/* overflow: hidden; */
 	text-overflow: ellipsis;
 }
 
