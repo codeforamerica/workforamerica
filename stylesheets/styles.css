@@ -32,21 +32,56 @@ div.site-width{
 
 header[role="masthead"]{
 	background: black;
-	padding: 1em 0;
+	padding: 1rem 0;
 	color: white;
+	margin-bottom: 2rem;
+	font-size: 1.25rem;
 }
 
 header[role="masthead"] a{
 	color: white;
+	font-weight: 600;
+	text-decoration: none;
 	margin-right: 1em;
 }
+
+header[role="masthead"] a.civic-startups{ color: #fd796b; }
+header[role="masthead"] a.governments{ color: #fdec34; }
+header[role="masthead"] a.suggest-a-job{ color: #2db282; }
+
+header[role="masthead"] a.civic-startups:hover{ color: #d73c3c; }
+header[role="masthead"] a.governments:hover{ color: #ddab00; }
+header[role="masthead"] a.suggest-a-job:hover{ color: #188d7b; }
+
 
 header[role="masthead"] a:hover{
 	text-decoration: none;
 }
 
 
-.home main{
-	text-align: center;
-	
+body.home {
+	background: #334e62;
+	color: #cde2f1;
+}
+
+body.home main{
+	text-align: center;	
+}
+
+.home main h1{
+	font-size: 3rem;
+}
+
+article.job-listing{
+	background: yellow;
+}
+
+article.job-listing h1{
+	font-size: 1rem;
+}
+
+article.job-listing dl,
+article.job-listing dl dt,
+article.job-listing dl dd{
+	display: inline;
 }
