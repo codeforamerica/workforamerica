@@ -16,3 +16,133 @@
 
 /* Application styles
 --------------------------------------------- */
+
+// Header
+.header {
+  // text-align: center;
+}
+
+.header__logo__brand {
+  font-weight: 700;
+  font-size: 1.5em;
+  letter-spacing: -0.05em;
+  color: $color-red;
+}
+
+.header__logo__tagline {
+  margin-top: 0;
+  color: $color-gray-medium;
+}
+
+.header__nav__item {
+  display: inline-block;
+  margin-top: 0;
+}
+
+.header__nav__item + .header__nav__item {
+  margin-left: 0.75em;
+}
+
+// Section labels
+.section-label {
+  font-weight: 700;
+}
+
+// Seperating the sections
+.about,
+.jobs,
+.hiring {
+  margin-top: 2em;
+}
+
+// Jobs
+.jobs ul {
+  margin-top: 2em;
+}
+
+.job {
+  border: 1px solid $color-gray-light;
+  padding: 1em;
+}
+
+.job + .job {
+  margin-top: 3em;
+}
+
+.job__title {
+  margin-top: -0.5em;
+  font-size: 1.5em;
+  line-height: 1.3em;
+}
+
+.job__organization {
+  margin-top: 0;
+}
+
+.job__skillset {
+  position: relative;
+  top: -2em;
+
+  display: inline-block;
+  color: $color-purple;
+  background-color: white;
+
+  font-weight: 700;
+  padding: 0 10px;
+  // border-radius: 4px;
+  border: 1px solid $color-gray-light;
+
+}
+
+// footer
+.footer {
+  margin-top: 4em;
+  margin-bottom: 2em;
+}
+
+.footer__logo {
+  display: block;
+  width: 100px;
+  // margin-left: auto;
+  // margin-right: auto;
+}
+
+.footer__logo a {
+  border-bottom: none;
+}
+
+.footer__logo img {
+  width: 100%;
+  height: auto;
+  opacity: 0.7;
+}
+
+// Layout as we scale up
+@media screen and (min-width: $breakpoint-medium) {
+  .about,
+  .hiring {
+    float: left;
+    width: 25%;
+    padding-right: 30px;
+  }
+  .jobs {
+    float: right;
+    width: 75%;
+  }
+  .jobs ul {
+    margin-top: -2em;
+  }
+  .job {
+    display: block;
+    width: 45%;
+    float: left;
+    margin-top: 4em;
+  }
+  .job + .job {
+    margin-top: 4em;
+    margin-left: 1em;
+  }
+  .job:nth-of-type(2n+1) {
+    margin-left: 0;
+  }
+}

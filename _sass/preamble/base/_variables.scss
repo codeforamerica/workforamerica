@@ -33,7 +33,7 @@ $base-font-family: $sans-serif;
 
 // Sizes
 
-$base-font-size: 1em;
+$base-font-size: 0.85rem;
 $base-line-height: 1.8;
 $heading-line-height: 1.2;
 
@@ -61,3 +61,9 @@ $base-border-radius: 3px;
 $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
+
+// =====
+// Breakpoints
+// =====
+$breakpoint-small: 40em;
+$breakpoint-medium: 60em;
