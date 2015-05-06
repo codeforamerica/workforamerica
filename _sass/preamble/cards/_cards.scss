@@ -1,0 +1,90 @@
+/* Preamble :: Cards
+--------------------------------------------- */
+
+// =====
+// Set the body to gray-ish, since we're using cards
+// =====
+
+body {
+  background-color: rgba(0,0,0,0.05);
+}
+
+// =====
+// Base card element
+// =====
+
+.card {
+  display: block;
+  background-color: white;
+  box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
+}
+
+// =====
+// Card header, usually with a background image inline
+// =====
+
+.card-header {
+  color: white;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.card-header-color {
+  background-color: $color-blue;
+}
+
+// Card header image
+
+.card-header-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: white;
+
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.card-header-image:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: linear-gradient(rgba(66,152,187,0.1), rgba(47,61,74,0.9)),
+              rgba(66,152,187,0.7);
+  // opacity: 0.8;
+  width: 100%;
+  height: 100%;
+}
+
+// Card header content
+
+.card-header-content {
+  z-index: 1;
+  position: relative;
+}
+
+.card-header-content-overline {
+  font-weight: 700;
+  font-size: $base-font-size * 1.3;
+  letter-spacing: -0.03em;
+  margin-top: 0;
+}
+
+.card-header-content-headline {
+  padding-top: 4em;
+}
+
+// =====
+// Padding inside the *-content areas of the card
+// =====
+
+.card-header-content,
+.card-content {
+  padding: 2rem;
+  @include clearfix();
+  margin-top: 0;
+}

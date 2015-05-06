@@ -1,0 +1,368 @@
+/* Preamble :: Base :: Typography
+--------------------------------------------- */
+
+button,
+input[type="button"],
+input[type="submit"],
+.button,
+.button[class*="button"]:link,
+.button[class*="button"]:visited,
+[class*="button"][class*="button"]:link,
+[class*="button"][class*="button"]:visited,
+/* Prominent */
+.button-prominent,
+input.button-prominent,
+/* Neutral */
+.button-neutral,
+input.button-neutral,
+/* Alternative */
+.button-alternative,
+input.button-alternative,
+/* Unstyled */
+.button-unstyled,
+input.button-unstyled,
+/* Subtle */
+.button-subtle,
+input.button-subtle,
+/* Disabled */
+button[disabled],
+input[type="button"][disabled],
+input[type="submit"][disabled],
+.button-disabled,
+/* Progress */
+.button-progress,
+input.button-progress {
+  // Override default anchor
+  border: none;
+  // Styles
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: $color-blue;
+  color: white;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 8px 15px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+/* Default */
+button:hover,
+button:focus,
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+.button:hover,
+.button:focus,
+.button[class*="button"]:hover,
+.button[class*="button"]:focus,
+[class*="button"][class*="button"]:hover,
+[class*="button"][class*="button"]:focus,
+/* Prominent */
+.button-prominent:hover,
+.button-prominent:focus,
+/* Neutral */
+.button-neutral:hover,
+.button-neutral:focus,
+/* Alternative */
+.button-alternative:hover,
+.button-alternative:focus,
+/* Unstyled */
+.button-unstyled:hover,
+.button-unstyled:focus,
+/* Subtle */
+.button-subtle:hover,
+.button-subtle:focus,
+/* Disabled */
+button[disabled]:hover,
+button[disabled]:focus,
+input[type="button"][disabled]:hover,
+input[type="button"][disabled]:focus,
+input[type="submit"][disabled]:hover,
+input[type="submit"][disabled]:focus,
+.button-disabled:hover,
+.button-disabled:focus,
+.button.button-disabled:hover,
+.button.button-disabled:focus,
+/* Progress */
+.button-progress:hover,
+.button-progress:focus,
+input.button-progress:hover,
+input.button-progress:focus {
+    background-color: #7ab5d6;
+    cursor: pointer;
+}
+
+/* Default */
+button:active,
+input[type="button"]:active,
+input[type="submit"]:active,
+.button:active,
+.button[class*="button"]:active,
+/* Prominent */
+.button-prominent:active,
+/* Neutral */
+.button-neutral:active,
+/* Alternative */
+.button-alternative:active,
+/* Unstyled */
+.button-unstyled:active,
+/* Subtle */
+.button-subtle:active,
+/* Disabled */
+input[type="button"][disabled]:active,
+input[type="submit"][disabled]:active,
+button[disabled]:active,
+.button-disabled:active,
+/* Progress */
+.button-progress:active {
+    background-color: #399fd3;
+}
+
+/* Default */
+button::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+/* Prominent */
+.button-prominent::-moz-focus-inner,
+/* Neutral */
+.button-neutral::-moz-focus-inner,
+/* Alternative */
+.button-alternative::-moz-focus-inner,
+/* Unstyled */
+.button-unstyled::-moz-focus-inner,
+/* Subtle */
+.button-subtle::-moz-focus-inner,
+/* Invert */
+.button-invert::-moz-focus-inner,
+/* Disabled */
+input[type="button"][disabled]::-moz-focus-inner,
+input[type="submit"][disabled]::-moz-focus-inner,
+button[disabled]::-moz-focus-inner,
+.button-disabled::-moz-focus-inner,
+.button.button-disabled::-moz-focus-inner,
+/* Progress */
+.button-progress::-moz-focus-inner,
+input.button-progress::-moz-focus-inner {
+    border: none;
+    padding: 0;
+}
+
+/*  Button: Reverse --------------------------------------- */
+.button-reverse[class*="button-reverse"],
+.button-reverse[class*="button-reverse"]:link,
+.button-reverse[class*="button-reverse"]:visited,
+.button-reverse[class*="button-reverse"]:active,
+input.button-reverse,
+input.button-reverse:active {
+  background: none;
+  border: 1px solid white;
+  transition: background-color 0.2s linear,
+              color 0.2s linear;
+  font-weight: 700;
+}
+.button-reverse[class*="button-reverse"]:hover,
+.button-reverse[class*="button-reverse"]:focus,
+input.button-reverse:hover,
+input.button-reverse:focus {
+  background-color: white;
+  color: $color-black;
+}
+
+/*  Button: Prominent --------------------------------------- */
+.button-prominent[class*="button-prominent"],
+.button-prominent[class*="button-prominent"]:link,
+.button-prominent[class*="button-prominent"]:visited,
+.button-prominent[class*="button-prominent"]:active,
+input.button-prominent,
+input.button-prominent:active {
+    background: #cf1b41;
+}
+.button-prominent[class*="button-prominent"]:hover,
+.button-prominent[class*="button-prominent"]:focus,
+input.button-prominent:hover,
+input.button-prominent:focus {
+    background: #cf1b41;
+    background: rgba(207, 27, 65, 0.8);
+}
+
+/*  Button: Prominent --------------------------------------- */
+.button-bold[class*="button-bold"],
+.button-bold[class*="button-bold"]:link,
+.button-bold[class*="button-bold"]:visited,
+.button-bold[class*="button-bold"]:active,
+input.button-bold,
+input.button-bold:active {
+    background: #aa1c3a;
+}
+.button-bold[class*="button-bold"]:hover,
+.button-bold[class*="button-bold"]:focus,
+input.button-bold:hover,
+input.button-bold:focus {
+    background: #aa1c3a;
+    background: rgba(207, 27, 65, 0.8);
+}
+
+/*  Button: Neutral --------------------------------------- */
+.button-neutral[class*="button-neutral"],
+.button-neutral[class*="button-neutral"]:link,
+.button-neutral[class*="button-neutral"]:visited,
+.button-neutral[class*="button-neutral"]:active,
+input.button-neutral,
+input.button-neutral:active {
+    background: #7ab5d6;
+}
+.button-neutral[class*="button-neutral"]:hover,
+.button-neutral[class*="button-neutral"]:focus,
+input.button-neutral:hover,
+input.button-neutral:focus {
+background: #7ab5d6;
+background: rgba(122, 181, 214, 0.8);
+}
+
+/*  Button: Alternative --------------------------------------- */
+.button-alternative[class*="button-alternative"],
+.button-alternative[class*="button-alternative"]:link,
+.button-alternative[class*="button-alternative"]:visited,
+.button-alternative[class*="button-alternative"]:active,
+input.button-alternative,
+input.button-alternative:active {
+    background: #00a175;
+}
+.button-alternative[class*="button-alternative"]:hover,
+.button-alternative[class*="button-alternative"]:focus,
+input.button-alternative:hover,
+input.button-alternative:focus {
+background: #00a175;
+background: rgba(0, 161, 117, 0.8);
+}
+
+/*  Button: Unstyled --------------------------------------- */
+.button-unstyled[class*="button-unstyled"],
+.button-unstyled[class*="button-unstyled"]:link,
+.button-unstyled[class*="button-unstyled"]:visited,
+.button-unstyled[class*="button-unstyled"]:active,
+input.button-unstyled,
+input.button-unstyled:active {
+    background-color: transparent;
+color: black;
+color: rgba(0, 0, 0, 0.6);
+padding-left: 0.25em;
+padding-right: 0.25em;
+    text-shadow: none;
+}
+.button-unstyled[class*="button-unstyled"]:hover,
+.button-unstyled[class*="button-unstyled"]:focus,
+input.button-unstyled:hover,
+input.button-unstyled:focus {
+    color: black;
+}
+
+/*  Button: Subtle --------------------------------------- */
+.button-subtle[class*="button-subtle"],
+.button-subtle[class*="button-subtle"]:link,
+.button-subtle[class*="button-subtle"]:visited,
+.button-subtle[class*="button-subtle"]:active,
+input.button-subtle,
+input.button-subtle:active {
+    background: #f1f1f1;
+    border: 1px solid #e5e5e5;
+    color: #6d6e71;
+    text-shadow: none;
+}
+
+.button-subtle[class*="button-subtle"]:hover,
+.button-subtle[class*="button-subtle"]:focus,
+input.button-subtle:hover,
+input.button-subtle:focus {
+    background: #eee;
+}
+
+/*  Button: Disabled --------------------------------------- */
+button[disabled],
+button[disabled]:hover,
+button[disabled]:focus,
+input[type="button"][disabled],
+input[type="button"][disabled]:hover,
+input[type="button"][disabled]:focus,
+input[type="submit"][disabled],
+input[type="submit"][disabled]:hover,
+input[type="submit"][disabled]:focus,
+.button-disabled[class*="button-disabled"],
+.button-disabled[class*="button-disabled"]:link,
+.button-disabled[class*="button-disabled"]:visited,
+.button-disabled[class*="button-disabled"]:hover,
+.button-disabled[class*="button-disabled"]:focus,
+.button-disabled[class*="button-disabled"]:active {
+    background-color: #e5e5e5;
+    color: #999595;
+    cursor: not-allowed;
+    text-shadow: none;
+}
+
+/*  Button: Progress --------------------------------------- */
+button.button-progress,
+button.button-progress:hover,
+button.button-progress:focus,
+input[type="button"].button-progress,
+input[type="button"].button-progress:hover,
+input[type="button"].button-progress:focus,
+input[type="submit"].button-progress,
+input[type="submit"].button-progress:hover,
+input[type="submit"].button-progress:focus,
+.button-progress[class*="button-progress"],
+.button-progress[class*="button-progress"]:link,
+.button-progress[class*="button-progress"]:visited,
+.button-progress[class*="button-progress"]:hover,
+.button-progress[class*="button-progress"]:focus,
+.button-progress[class*="button-progress"]:active {
+    background-image: url("../images/loading-circle-blue.gif");
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    cursor: not-allowed;
+    padding-right: 50px;
+}
+.button-alternative.button-progress[class*="button-progress"],
+.button-alternative.button-progress[class*="button-progress"]:hover,
+.button-alternative.button-progress[class*="button-progress"]:focus,
+input.button-alternative.button-progress,
+input.button-alternative.button-progress:hover,
+input.button-alternative.button-progress:focus {
+    background-image: url("../images/loading-circle-green.gif");
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+}
+.button-prominent.button-progress[class*="button-progress"],
+.button-prominent.button-progress[class*="button-progress"]:hover,
+.button-prominent.button-progress[class*="button-progress"]:focus,
+input.button-prominent.button-progress,
+input.button-prominent.button-progress:hover,
+input.button-prominent.button-progress:focus {
+    background-image: url("../images/loading-circle-red.gif");
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+}
+.button-bold.button-progress[class*="button-progress"],
+.button-bold.button-progress[class*="button-progress"]:hover,
+.button-bold.button-progress[class*="button-progress"]:focus,
+input.button-bold.button-progress,
+input.button-bold.button-progress:hover,
+input.button-bold.button-progress:focus {
+    background-image: url("../images/loading-circle-red.gif");
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+}
+.button-subtle.button-progress[class*="button-progress"],
+.button-subtle.button-progress[class*="button-progress"]:hover,
+.button-subtle.button-progress[class*="button-progress"]:focus,
+input.button-subtle.button-progress,
+input.button-subtle.button-progress:hover,
+input.button-subtle.button-progress:focus {
+    background-image: url("../images/loading-circle.gif");
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    border: 1px solid #e5e5e5;
+    color: #6d6e71;
+}

@@ -1,0 +1,142 @@
+/* Preamble :: Base :: Typography
+--------------------------------------------- */
+
+// =====
+// Body-wide settings
+// =====
+
+body {
+  -webkit-font-smoothing: antialiased;
+  color: $base-font-color;
+  font-family: $sans-serif;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+// =====
+// Headings
+// =====
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: $serif;
+  font-size: $base-font-size;
+  line-height: $heading-line-height;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+h1, .h1 {
+  font-size: $base-font-size * 3.4;
+}
+
+h2, .h2 {
+  font-size: $base-font-size * 3;
+}
+
+h3, .h3 {
+  font-size: $base-font-size * 2.6;
+}
+
+h3, .h3 {
+  font-size: $base-font-size * 2.4;
+}
+
+h4, .h4 {
+  font-size: $base-font-size * 2;
+}
+
+h5, .h5 {
+  font-size: $base-font-size * 1.6;
+}
+
+h6, .h6 {
+  font-size: $base-font-size * 1.2;
+}
+
+// =====
+// Paragraphs
+// =====
+
+p {
+  // Inherits base-font-family from body
+}
+
+// =====
+// Anchors
+// =====
+
+a {
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 2px solid $color-blue-light;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $color-blue-dark;
+    border-bottom-color: $color-blue-dark;
+  }
+}
+
+// =====
+// Reversed on dark color/photo
+// =====
+
+.reverse {
+  color: white;
+}
+
+.reverse a,
+a.reverse {
+  color: white;
+  border-bottom-color: white;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $color-blue-light;
+    border-bottom-color: $color-blue-light;
+  }
+}
+
+// =====
+// hr
+// =====
+
+hr {
+  border: none;
+  border-top: 1px solid $color-gray-medium;
+}
+
+// =====
+// Custom elements
+// =====
+
+// Heading, usually applied with a h1-h6
+.text-subheading {
+  font-family: $sans-serif;
+  display: block;
+}
+
+* + .text-heading {
+  padding-top: 1em;
+}
+
+// Small or large
+.text-small {
+  font-size: $base-font-size * 0.8;
+}
+
+.text-large {
+  font-size: $base-font-size * 1.2;
+}
+
+// Lighter color
+.text-light {
+  color: lighten($color-black,30%);
+}

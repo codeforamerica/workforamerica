@@ -1,0 +1,226 @@
+/* Preamble :: Layout
+--------------------------------------------- */
+
+// =====
+// Variables
+// =====
+
+// Breakpoints
+$breakpoint-small: 40em;
+$breakpoint-medium: 60em;
+
+// Gutter between columns
+$gutter: 2rem;
+
+// =====
+// Mixins
+// =====
+
+// Apply clearfix to class
+@mixin clearfix() {
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+
+// Pass $num as the number of columns it should span,
+// get a width calc() statement in return that'll fill your row perfectly
+@mixin grid-calc($num) {
+  $multiplier: $num - 1;
+  width: calc( ( 100% - (#{$gutter}*#{$multiplier}) ) / #{$num} );
+}
+
+// Build a grid statement off the number of columns spanned
+@mixin grid-maker($columns) {
+  float: left;
+  // Call grid-calc to build the width statement
+  @include grid-calc($columns);
+  margin-left: $gutter;
+  @include clearfix();
+
+  &:first-of-type, &:first-child {
+    margin-left: 0;
+  }
+
+  &:nth-of-type(#{$columns}n+1), &:nth-child(#{$columns}n+1) {
+    margin-left: 0;
+  }
+}
+
+/* Collapsed columns should have extra space */
+[class*="column"] + [class*="column"] {
+  margin-top: 4rem;
+
+  &:first-of-type, &:first-child {
+    margin-top: 0;
+  }
+}
+
+// Layout only affects mobile-up
+@media screen and (min-width: $breakpoint-small) {
+
+  // =====
+  // Rows
+  // =====
+
+  /* row
+  --------------------------------------------- */
+  .row {
+    width: 100%;
+    float: none;
+    @include clearfix();
+    display: block;
+  }
+
+  .row > * {
+    margin-top: 0;
+  }
+
+  // =====
+  // Columns
+  // =====
+
+  /* Reset column spacing now that we're floating */
+  [class*="column"] + [class*="column"] {
+    margin-top: 0;
+  }
+
+  /* column-full - fill 100%
+  --------------------------------------------- */
+  .column-full,
+  .column-grid-full > li,
+  .column-grid-full > div {
+    float: none;
+    width: 100%;
+    @include clearfix();
+  }  
+
+  /* column-half
+  --------------------------------------------- */
+  .column-half,
+  .column-grid-half > li,
+  .column-grid-half > div {
+    @include grid-maker(2);
+  }
+
+  /* column-third
+  --------------------------------------------- */
+  .column-third,
+  .column-grid-third > li,
+  .column-grid-third > div {
+    @include grid-maker(3);
+  }
+
+  /* column-third-major (3/4 width)
+  --------------------------------------------- */
+  .column-third-major {
+    float: left;
+    margin-left: $gutter;
+    width: calc( ( 100% - ( #{$gutter} ) ) * 0.666 );
+    @include clearfix();
+  }
+
+  /* column-third-minor (1/4 width)
+  --------------------------------------------- */
+  .column-third-minor {
+    float: left;
+    margin-left: $gutter;
+    width: calc( ( 100% - ( #{$gutter} ) ) * 0.333 );
+    @include clearfix();
+  }
+
+  /* column-fourth
+  --------------------------------------------- */
+  .column-fourth,
+  .column-grid-fourth > li,
+  .column-grid-fourth > div {
+    @include grid-maker(4);
+  }
+
+  /* column-fourth-major (3/4 width)
+  --------------------------------------------- */
+  .column-fourth-major {
+    float: left;
+    margin-left: $gutter;
+    width: calc( ( 100% - ( #{$gutter} ) ) * 0.75 );
+    @include clearfix();
+  }
+
+  /* column-fourth-minor (1/4 width)
+  --------------------------------------------- */
+  .column-fourth-minor {
+    float: left;
+    margin-left: $gutter;
+    width: calc( ( 100% - ( #{$gutter} ) ) * 0.25 );
+    @include clearfix();
+  }
+
+  /* Reset margin on first major/minor
+  --------------------------------------------- */
+  [class*="-major"],[class*="-minor"] {
+    &:first-of-type, &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  /* column-eighth
+  --------------------------------------------- */
+  .column-eighth,
+  .column-grid-eighth > li,
+  .column-grid-eighth > div {
+    @include grid-maker(8);
+  }
+
+
+
+}
+
+// =====
+// Layouts (hold columns)
+// =====
+
+.layout-giant,
+.layout-large,
+.layout-medium,
+.layout-small,
+.layout-tiny,
+[class*="layout-"], {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  padding: 0 1em;
+  @include clearfix();
+  float: none;
+}
+
+// Tighter top margin
+[class*="layout-"][class*="-tight"] {
+  margin-top: 1rem;
+}
+
+// Tighter top margin
+[class*="layout-"][class*="-loose"] {
+  margin-top: 4rem;
+}
+
+.layout-giant, [class*="layout-giant"] {
+  max-width: 90rem;
+}
+
+.layout-large, [class*="layout-large"] {
+  max-width: 80rem;
+}
+
+.layout-medium, [class*="layout-medium"] {
+  max-width: 70rem;
+}
+
+.layout-small, [class*="layout-small"] {
+  max-width: 60rem;
+}
+
+.layout-tiny, [class*="layout-tiny"] {
+  max-width: 50rem;
+}

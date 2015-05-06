@@ -1,0 +1,44 @@
+/* Preamble :: Base :: Flow
+--------------------------------------------- */
+
+// =====
+// Spacing rhythm
+// =====
+
+* {
+  margin: 0;
+}
+
+* + * {
+  margin-top: 1rem;
+}
+
+.tight,
+.tight * {
+  margin-top: 0;
+}
+
+.compact,
+.compact * {
+  margin-top: 0.5em;
+}
+
+// =====
+// Box-sizing
+// =====
+
+*, 
+*:before, 
+*:after {
+  box-sizing: border-box;
+}
+
+// =====
+// Clearflix
+// =====
+
+.clearfix:after {
+  content: " ";
+  display: table;
+  clear: both;
+}

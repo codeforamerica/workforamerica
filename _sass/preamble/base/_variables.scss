@@ -1,0 +1,63 @@
+// Preamble :: Base :: Variables
+// ---------------------------------------------
+
+// =====
+// Colors
+// =====
+
+$color-red: #cf1b41;
+$color-red-medium: #aa1c3a;
+$color-blue: #399fd3;
+$color-blue-light: #7ab5d6;
+$color-blue-medium: #4298bb;
+$color-blue-dark: #004b6a;
+$color-gray: #6D6E71;
+$color-gray-light: #e5e5e5;
+$color-gray-medium: #999595;
+$color-gray-dark: #444444;
+$color-orange: #e87d2b;
+$color-purple: #69579C;
+$color-green: #00a175;
+$color-yellow: #fedd44;
+$color-black: rgba(0,0,0,0.7);
+
+// =====
+// Typography
+// =====
+
+// Typefaces
+
+$serif: "Sentinel SSm A","Sentinel SSm B","abril-text",Georgia,serif;
+$sans-serif: "Gotham A","Gotham B","proxima-nova","Proxima Nova",Helvetica,sans-serif;
+$base-font-family: $sans-serif;
+
+// Sizes
+
+$base-font-size: 1em;
+$base-line-height: 1.8;
+$heading-line-height: 1.2;
+
+// Color
+
+$base-font-color: $color-black;
+
+// =====
+// Other useful stuff
+// =====
+
+// Background color
+
+$base-background-color: #fff;
+$background-color-gray: $color-gray-light;
+
+// Border color
+
+$base-border-color: $color-gray-light;
+$base-border: 1px solid $base-border-color;
+
+// Spacing
+
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
