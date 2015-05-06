@@ -5,17 +5,7 @@ Work for America
 
 Work for America is a job board that connects technologists with interesting government job opportunities.
 
-## What it uses
+How To Use
+----------
 
-* Jekyll 2.5.3
-* ???
-
-## How to deploy it locally
-
-```
-$ git clone https://github.com/codeforamerica/workforamerica.git
-$ cd workforamerica
-$ jekyll serve --watch
-```
-
-Then open [http://localhost:4000/](http://localhost:4000/) and have some fun.
+Work for America is a static website [built with Jekyll 2.5.3](https://github.com/codeforamerica/howto/blob/master/Jekyll.md).
