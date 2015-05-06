@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}Work for America</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CfA Typography -->
+  <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6435252/668946/css/fonts.css">
+  <!-- Application CSS -->
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/application.css">
+</head>
+<body>
+  {% include header.html %}
+  {{ content }}
+  {% include footer.html %}
+</body>
+</html>
