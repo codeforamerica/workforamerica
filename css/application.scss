@@ -134,7 +134,7 @@
   }
   .job {
     display: block;
-    width: 45%;
+    width: 48%;
     float: left;
     margin-top: 4em;
   }
@@ -144,5 +144,14 @@
   }
   .job:nth-of-type(2n+1) {
     margin-left: 0;
+  }
+  // footer
+  .footer__logo {
+    float: left;
+    margin-right: 1em;
+  }
+  .footer__logo + p {
+    float: right;
+    // padding-top: 0.5em;
   }
 }
