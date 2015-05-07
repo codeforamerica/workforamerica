@@ -1,6 +1,6 @@
 <script type="x/template" id="js-template-jobs_all">
   <% /* Expects array of jobs */ %>
-  <% _.each(jobs, function(job){ %>
+  <% _.each(data, function(job){ %>
   <li class="job" id="<%= job.unique_id %>">
     <p class="job__skillset job__skillset--<%= job.job_skillset.toLowerCase().replace(' ','-') %>"><%= job.job_skillset %></p>
     <p class="job__title"><%= job.job_title %></p>

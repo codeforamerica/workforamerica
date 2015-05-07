@@ -8,7 +8,7 @@ layout: default
   </div>
 
   <div class="jobs">
-    <ul class="unstyled clearfix" id="jobs-app">
+    <ul class="unstyled clearfix" id="js-app-jobs_all">
       <p>Loading... :)</p>
     </ul>
   </div>
@@ -30,25 +30,3 @@ layout: default
           <p class="job__link"><a href="#" class="button-bold">Learn More</a></p>
       </li>
 -->
-
-<script type="x/template" id="js-jobs-template">
-  <% _.each(jobs, function(job){ %>
-    <li class="job" id="<%= job.unique_id %>">
-        <p class="job__skillset job__skillset--<%= job.job_skillset.toLowerCase().replace(' ','-') %>"><%= job.job_skillset %></p>
-        <p class="job__title"><%= job.job_title %></p>
-        <p class="job__department"><%= job.job_department %></p>
-        <p class="job__organization"><%= job.job_organization %> (<%= job.job_city %>, <%= job.job_state %>)</p>
-        <p class="job__summary"><%= job.job_summary %></p>
-        <p class="job__link"><a href="{{ site.baseurl }}/job?id=<%= job.unique_id %>" class="button-bold">Learn More</a></p>
-    </li>
-  <% }); %>
-</script>
-
-<script>
-  $(document).ready(function(){
-    app.init('all_jobs', function(data,template,err){
-      if (err) { throw err; }
-      var template = $('#js-template-all_jobs').html();
-    });
-  });
-</script>
