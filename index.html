@@ -43,3 +43,12 @@ layout: default
     </li>
   <% }); %>
 </script>
+
+<script>
+  $(document).ready(function(){
+    app.init('all_jobs', function(data,template,err){
+      if (err) { throw err; }
+      var template = $('#js-template-all_jobs').html();
+    });
+  });
+</script>

@@ -1,58 +1,76 @@
-// ======
-// Get the data
-// ======
+// =====
+// Set up our app
+// =====
+var app = {},
+    app.global = {};
+    // Global settings
+    app.global.sheet_url = 'https://docs.google.com/spreadsheets/d/1O8bcLjf6vapSodOb_zCg445Cr_ctjlRahJRakapKV-Y/pubhtml';
+    app.global.sheet_name = 'submitted_jobs';
 
-var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1O8bcLjf6vapSodOb_zCg445Cr_ctjlRahJRakapKV-Y/pubhtml';
+// =====
+// Run the app
+// =====
+app.init = function(name,settings) {
+  if ((!app.global.sheet_url) || (!app.global.sheet_url)) {
+    // Not set up properly!
+    return false;
+  }
+  if (app.exists(name)) {
+    var data,
+        template,
+        compile,
+        result;
+    // Get the data 
+    data = app.get(app.global.sheet_url,app.global.sheet_name); // Returns array of objects
+    // Get the template
+    template = $('#js-template-' + name).html();
+    // Get ready to use the template
+    compile = _.template(template);
+    // Run template and return our HTML
+    result = compiled({ 'data' : data });
+    // Put the compiled template into the DOM
+    $('#js-app-' + name).html(result);
+    // Return true
+    return true;
+  }
+  return false;
+}
 
-function init() {
+// =====
+// Check if the app exists on the page by finding an ID in the dom in this format: #js-app-name
+// =====
+app.exists = function(name) {
+  if ($('#js-app-' + name) > 0) {
+    return true;
+  }
+  return false;
+}
+
+// =====
+// Get the data for the requested sheet, return an array of objects
+// =====
+app.get = function(url,sheet) {
   console.log('Ring, ring. Calling Google Sheets...')
-  Tabletop.init( { key: public_spreadsheet_url,
-                   callback: handleData,
-                   simpleSheet: true } );
-}
-
-function handleData(data,tabletop) {
-  console.log('They picked up...')
-
-  // Pull out the data
-  var jobs;
-  jobs = tabletop.sheets('submitted_jobs').elements;
-  console.log(jobs);
-
-  // Do something with the data
-  makeJobs(jobs);
-}
-
-function makeJobs(jobs) {
-  var template,
-      compiled,
-      conten;
-  template = $('#js-jobs-template').html();
-  compiled = _.template(template);
-  content = compiled({ 'jobs' : jobs });
-  $('#jobs-app').html( content );
-}
-// =====
-// Check if app exists by searching for some class/id in the DOM
-// =====
-
-function appExists(dom) {
-  var exists;
-  exists = $(dom);
-  if (exists.length > 0) { 
-    return true; 
-  }
-  else { 
-    return false; 
-  }
+  var goods;
+  goods = Tabletop.init(
+  { 
+    key: public_spreadsheet_url,
+    callback: function(data,tabletop) {
+      console.log('They picked up...')
+    },
+    simpleSheet: true 
+  });
+  // Return the data from the sheet we want
+  return goods.sheets(sheet).elements;
 }
 
 // =====
-// Do the thing
+// Run everything
 // =====
-
-$(document).ready(function(){
-  if (appExists('#jobs-app')) {
-    init();
-  }
-});
+(function(win,doc){
+  // =====
+  // Do the thing
+  // =====
+  app.init('jobs_all');
+  app.init('jobs_single');
+})(this,this.document);
