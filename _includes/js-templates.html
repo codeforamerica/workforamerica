@@ -1,17 +1,22 @@
 <script type="x/template" id="js-template-jobs_all">
-  <% /* Expects array of jobs */ %>
+  <% /* Expects data to be array of jobs */ %>
   <% _.each(data, function(job){ %>
-  <li class="job" id="<%= job.unique_id %>">
+  <li class="job" id="<%= job.id %>">
     <p class="job__skillset job__skillset--<%= job.job_skillset.toLowerCase().replace(' ','-') %>"><%= job.job_skillset %></p>
     <p class="job__title"><%= job.job_title %></p>
     <p class="job__department"><%= job.job_department %></p>
     <p class="job__organization"><%= job.job_organization %> (<%= job.job_city %>, <%= job.job_state %>)</p>
     <p class="job__summary"><%= job.job_summary %></p>
-    <p class="job__link"><a href="{{ site.baseurl }}/jobs?id=<%= job.unique_id %>" class="button-bold">Learn More</a></p>
+    <p class="job__link"><a href="{{ site.baseurl }}/jobs?id=<%= job.id %>" class="button-bold">Learn More</a></p>
   </li>
   <% }); %>
 </script>
 
 <script type="x/template" id="js-template-jobs_single">
-  <% /* Expects single job object */ %>
+  <% /* Expects data to be a single job object */ 
+     var job = data;
+  %>
+
+  <%= job.job_title %>
+
 </script>
