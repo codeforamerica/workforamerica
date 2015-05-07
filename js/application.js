@@ -19,14 +19,14 @@ app.init = function(name,settings) {
     var template,
         compiled,
         result;
-    // Get the data, finish the process
+    // Get the template
+    template = $('#js-template-' + name).html();
+    // Get ready to use the template
+    compiled = _.template(template);
+    // Get the data, fill in the template
     app.get(app.global.sheet_url,app.global.sheet_name,
     function(data,tabletop)
     {
-      // Get the template
-      template = $('#js-template-' + name).html();
-      // Get ready to use the template
-      compiled = _.template(template);
       // Run template and return our HTML
       result = compiled({ 'data' : data });
       // Put the compiled template into the DOM
@@ -52,9 +52,9 @@ app.exists = function(name) {
 // Get the data for the requested sheet, return an array of objects
 // =====
 app.get = function(url,sheet,cb) {
-  console.log('Ring, ring. Calling Google Sheets...')
+  console.log('Ring, ring. Calling Google Sheets...');
   // var goods;
-  return Tabletop.init(
+  Tabletop.init(
   { 
     key: url,
     callback: cb,
