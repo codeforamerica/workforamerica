@@ -9,30 +9,7 @@ layout: default
 
   <div class="jobs">
     <ul class="unstyled clearfix" id="jobs-app">
-      <li class="job">
-          <p class="job__skillset">Designer</p>
-          <p class="job__title">Senior Front End Developer</p>
-          <p class="job__department">Department of Technology</p>
-          <p class="job__organization">City and County of San Francisco (San Francisco, Calif.)</p>
-          <p class="job__summary">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa um sociis nat.</p>
-          <p class="job__link"><a href="#" class="button-bold">Learn More</a></p>
-      </li>
-      <li class="job">
-          <p class="job__skillset">Designer</p>
-          <p class="job__title">Senior Front End Developer</p>
-          <p class="job__department">Department of Technology</p>
-          <p class="job__organization">City and County of San Francisco (San Francisco, Calif.)</p>
-          <p class="job__summary">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa um sociis nat.</p>
-          <p class="job__link"><a href="#" class="button-bold">Learn More</a></p>
-      </li>
-      <li class="job">
-          <p class="job__skillset">Designer</p>
-          <p class="job__title">Senior Front End Developer</p>
-          <p class="job__department">Department of Technology</p>
-          <p class="job__organization">City and County of San Francisco (San Francisco, Calif.)</p>
-          <p class="job__summary">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa um sociis nat.</p>
-          <p class="job__link"><a href="#" class="button-bold">Learn More</a></p>
-      </li>
+      <p>Loading... :)</p>
     </ul>
   </div>
 
@@ -43,8 +20,18 @@ layout: default
   </div>
 </div>
 
-<script type="x/template" id="js-jobs-template">
+<!-- 
+      <li class="job">
+          <p class="job__skillset">Designer</p>
+          <p class="job__title">Senior Front End Developer</p>
+          <p class="job__department">Department of Technology</p>
+          <p class="job__organization">City and County of San Francisco (San Francisco, Calif.)</p>
+          <p class="job__summary">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa um sociis nat.</p>
+          <p class="job__link"><a href="#" class="button-bold">Learn More</a></p>
+      </li>
+-->
 
+<script type="x/template" id="js-jobs-template">
   <% _.each(jobs, function(job){ %>
     <li class="job" id="<%= job.unique_id %>">
         <p class="job__skillset job__skillset--<%= job.job_skillset.toLowerCase().replace(' ','-') %>"><%= job.job_skillset %></p>
