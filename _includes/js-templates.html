@@ -7,7 +7,7 @@
     <p class="job__department"><%= job.job_department %></p>
     <p class="job__organization"><%= job.job_organization %> (<%= job.job_city %>, <%= job.job_state %>)</p>
     <p class="job__summary"><%= job.job_summary %></p>
-    <p class="job__link"><a href="{{ site.baseurl }}/job?id=<%= job.unique_id %>" class="button-bold">Learn More</a></p>
+    <p class="job__link"><a href="{{ site.baseurl }}/jobs?id=<%= job.unique_id %>" class="button-bold">Learn More</a></p>
   </li>
   <% }); %>
 </script>
