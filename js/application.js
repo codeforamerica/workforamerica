@@ -4,6 +4,7 @@
 var app = {};
     // Global settings
     app.global = {};
+    app.global.name = 'workforamerica';
     app.global.sheet_url = 'https://docs.google.com/spreadsheets/d/1O8bcLjf6vapSodOb_zCg445Cr_ctjlRahJRakapKV-Y/pubhtml';
     app.global.sheet_name = 'submitted_jobs';
     app.global.errormsg = {};
@@ -29,6 +30,7 @@ app.init = function(name,settings) {
     app.get(app.global.sheet_url,app.global.sheet_name,
     function(data,tabletop)
     {
+      app.save(data);
       // Do we need to get data by ID?
       if (typeof settings !== 'undefined') {
         if (settings.data_id) {
@@ -44,7 +46,6 @@ app.init = function(name,settings) {
       result = compiled({ 'data' : data });
       // Put the compiled template into the DOM
       $('#js-app-' + name).html(result);
-      // Return true
     });
     return true;
   }
@@ -72,17 +73,64 @@ app.getDataByID = function(data,id) {
 // Get the data for the requested sheet, return an array of objects
 // =====
 app.get = function(url,sheet,cb) {
-  console.log('Ring, ring. Calling Google Sheets...');
-  // var goods;
-  Tabletop.init(
-  { 
-    key: url,
-    callback: cb,
-    simpleSheet: true 
-  });
-  // Return the data from the sheet we want
-  // return goods.sheets(sheet).elements;
+  // Let's check if the data exists
+  var saved,
+      cachedAt;
+  saved = localStorage.getItem(app.global.name);
+  cachedAt = localStorage.getItem(app.global.name + '--cachedAt');
+
+  if (saved !== null && saved !== "" && cachedAt !== null && cachedAt !== "") {
+    saved = JSON.parse(saved);
+    cachedAt = JSON.parse(cachedAt);
+    cachedAt = new Date(cachedAt);
+    // Check if it was saved longer than 5 minutes ago (300 seconds)
+    seconds = Math.floor((new Date() - cachedAt) / 1000);
+    if (seconds < 300) {
+      console.log('Found saved sheet...');
+      cb(saved);
+    }
+    else {
+      console.log('Stale data. Calling Google Sheets...');
+      Tabletop.init(
+      { 
+        key: url,
+        callback: cb,
+        simpleSheet: true 
+      });
+    }
+  }
+  else {
+    console.log('Ring, ring. Calling Google Sheets...');
+    Tabletop.init(
+    { 
+      key: url,
+      callback: cb,
+      simpleSheet: true 
+    });
+  }
 }
+
+// =====
+// Reach out to Google Docs
+// =====
+
+app.fetch = function() {
+  
+}
+
+// =====
+// Save the data in local storage
+// =====
+
+app.save = function(data) {
+  // Save the data in local storage
+  var cachedAt;
+  cachedAt = new Date();
+  localStorage.setItem(app.global.name,JSON.stringify(data));
+  localStorage.setItem(app.global.name + '--cachedAt',JSON.stringify(cachedAt));
+  return;
+}
+
 
 // =====
 // Run everything
