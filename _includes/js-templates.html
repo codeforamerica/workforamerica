@@ -16,7 +16,36 @@
   <% /* Expects data to be a single job object */ 
      var job = data;
   %>
-
-  <%= job.job_title %>
-
+  <div class="single-job">
+    <div class="single-job__section">
+      <p class="single-job__label">Title</p>
+      <p class="single-job__title"><%= job.job_title %></p>
+      <p class="single-job__label">Skillset</p>
+      <p class="single-job__skillset single-job__skillset--<%= job.job_skillset.toLowerCase().replace(' ','-') %>"><%= job.job_skillset %></p>
+      <p class="single-job__label">Organization</p>
+      <p class="single-job__organization">
+        <%= job.job_department %><br />
+        <%= job.job_organization %>
+      </p>
+      <p class="single-job__label">Location</p>
+      <p class="single-job__organization"><%= job.job_city %>, <%= job.job_state %></p>
+    </div>
+    <div class="single-job__section">
+      <p class="single-job__label">Details</p>
+      <p class="single-job__summary"><%= job.job_summary %></p>
+      <p><strong>What day-to-day activities will this job entail?</strong><br />
+      <%= job.job_activities %></p>
+      <p><strong>What impact will the position have?</strong><br />
+      <%= job.job_impact %></p>
+      <p><strong>What team will this position work in?</strong><br />
+      <%= job.job_team %></p>
+    </div>
+    <div class="single-job__section">
+      <p class="single-job__label">Learn more and apply</p>
+      <p>To learn more about this job, or to reach out and ask questions, please visit the full posting.</p>
+      <p><a href="<%= job.job_link %>" class="button-bold">See the full job posting</a></p>
+      <p class="single-job__label">Posted on</p>
+      <p><%= job.job_created %></p>
+    </div>
+  </div>
 </script>
