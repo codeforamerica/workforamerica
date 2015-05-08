@@ -91,22 +91,12 @@ app.get = function(url,sheet,cb) {
     }
     else {
       console.log('Stale data. Calling Google Sheets...');
-      Tabletop.init(
-      { 
-        key: url,
-        callback: cb,
-        simpleSheet: true 
-      });
+      app.fetch(url,sheet,cb);
     }
   }
   else {
     console.log('Ring, ring. Calling Google Sheets...');
-    Tabletop.init(
-    { 
-      key: url,
-      callback: cb,
-      simpleSheet: true 
-    });
+    app.fetch(url,sheet,cb);
   }
 }
 
@@ -114,8 +104,13 @@ app.get = function(url,sheet,cb) {
 // Reach out to Google Docs
 // =====
 
-app.fetch = function() {
-  
+app.fetch = function(url,sheet,cb) {
+  Tabletop.init(
+  { 
+    key: url,
+    callback: cb,
+    simpleSheet: true 
+  });
 }
 
 // =====
